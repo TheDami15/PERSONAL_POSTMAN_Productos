@@ -1,0 +1,16 @@
+-- Crear la tabla Categorías
+CREATE TABLE tm_categoria (
+    cat_id INT PRIMARY KEY,
+    cat_nom VARCHAR(255),
+    cat_obs VARCHAR(255),
+    est INT
+);
+
+-- Crear la tabla Productos con la clave foránea
+CREATE TABLE tm_producto (
+    pro_id INT PRIMARY KEY,
+    pro_nom VARCHAR(255),
+    pro_obs VARCHAR(255),
+    cat_id INT,
+    FOREIGN KEY (cat_id) REFERENCES tm_categoria(cat_id)
+);
